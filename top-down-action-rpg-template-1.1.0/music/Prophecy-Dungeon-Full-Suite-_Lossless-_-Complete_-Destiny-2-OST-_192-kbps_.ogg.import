@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Prophecy-Dungeon-Full-Suite-_Lossless-_-Complete_-Destiny-2-OST-_192-kbps_.ogg-37ab5d03e8ff09e843bf9f652c76cc20.oggstr"
+
+[deps]
+
+source_file="res://music/Prophecy-Dungeon-Full-Suite-_Lossless-_-Complete_-Destiny-2-OST-_192-kbps_.ogg"
+dest_files=[ "res://.import/Prophecy-Dungeon-Full-Suite-_Lossless-_-Complete_-Destiny-2-OST-_192-kbps_.ogg-37ab5d03e8ff09e843bf9f652c76cc20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
