@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/levels/HouseInside.tscn" type="PackedScene" id=1]
+
+[node name="Cueva" type="Node2D"]
+position = Vector2( 10.6908, 292.214 )
+
+[node name="HouseInside" parent="." instance=ExtResource( 1 )]
