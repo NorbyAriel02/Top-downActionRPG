@@ -1,0 +1,277 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/props/Flower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/props/Grass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/misc/MusicTrack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/props/Table.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/props/MushroomSmall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/characters/Npc.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/props/MushroomBig.tscn" type="PackedScene" id=7]
+[ext_resource path="res://textures/props/puddle_big.png" type="Texture" id=8]
+[ext_resource path="res://textures/props/puddle_small.png" type="Texture" id=9]
+[ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/misc/Quest.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/characters/Enemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/misc/ItemSpawner.tscn" type="PackedScene" id=14]
+
+[node name="Nivel" type="Node2D"]
+
+[node name="puddle_small" type="Sprite" parent="."]
+position = Vector2( -1167.23, 2015.69 )
+texture = ExtResource( 9 )
+
+[node name="puddle_small2" type="Sprite" parent="."]
+position = Vector2( -2943.48, 499.658 )
+texture = ExtResource( 9 )
+
+[node name="puddle_small3" type="Sprite" parent="."]
+position = Vector2( -3701.5, 635.422 )
+texture = ExtResource( 9 )
+
+[node name="puddle_big" type="Sprite" parent="."]
+position = Vector2( 1163.4, 1925.19 )
+texture = ExtResource( 8 )
+
+[node name="puddle_big2" type="Sprite" parent="."]
+position = Vector2( -3961.71, -507.262 )
+texture = ExtResource( 8 )
+
+[node name="puddle_big3" type="Sprite" parent="."]
+position = Vector2( -3543.11, -2521.1 )
+texture = ExtResource( 8 )
+
+[node name="puddle_big4" type="Sprite" parent="."]
+position = Vector2( -1031.46, -1706.52 )
+texture = ExtResource( 8 )
+
+[node name="puddle_small4" type="Sprite" parent="."]
+position = Vector2( 3199.87, -993.752 )
+texture = ExtResource( 9 )
+
+[node name="puddle_big5" type="Sprite" parent="."]
+position = Vector2( 1480.18, -1842.28 )
+texture = ExtResource( 8 )
+
+[node name="puddle_small5" type="Sprite" parent="."]
+position = Vector2( -1800.79, -371.498 )
+texture = ExtResource( 9 )
+
+[node name="music_track" parent="." instance=ExtResource( 3 )]
+music_track = "res://music/Mii-Channel.wav.ogg"
+
+[node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="NPC" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -4157.67, -2922.63 )
+character_name = "Homero"
+dialogs = [ "Bienvenido a mi mundo aventurero.", "Si deseas volver a tu mundo deberas traerme la llave eterna	.", "La encontraras en el laberinto acuatico.
+", "Suerte, hasta la proxima!" ]
+
+[node name="trigger" parent="YSort/NPC" index="2"]
+position = Vector2( 4.48975, 82.0947 )
+
+[node name="Quest" parent="YSort/NPC" instance=ExtResource( 11 )]
+quest_name = "Laberinto acuático"
+required_item = "Llave mushroom"
+required_amount = 1
+reward_item = "Llave demonio"
+initial_text = "Bienvenido a mi mundo aventurero.
+
+Si deseas volver a tu mundo deberas traerme la llave mushroom.
+
+La encontrarás en el laberinto mushroom.
+"
+pending_text = "Te espero aca."
+delivered_text = "Felicitaciones! Continua tu camino!"
+
+[node name="mushroom_small" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 72.218, 574.18 )
+
+[node name="mushroom_small2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 951.909, 581.731 )
+
+[node name="mushroom_small3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 81.6567, 132.447 )
+
+[node name="mushroom_small4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 957.572, 130.559 )
+
+[node name="table" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 529.053, 351.425 )
+
+[node name="flower" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 514.169, -90.6755 )
+
+[node name="flower2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -357.971, 373.711 )
+
+[node name="flower3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 1344.78, 343.507 )
+
+[node name="flower4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 480.19, 1630.95 )
+
+[node name="grass" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -331.542, 1257.18 )
+
+[node name="grass2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -195.624, -838.224 )
+
+[node name="grass3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 1212.64, -808.02 )
+
+[node name="grass4" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 1484.47, 1234.52 )
+
+[node name="mushroom_big" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 1865.33, -684.274 )
+
+[node name="mushroom_big2" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 2085.33, 747.988 )
+
+[node name="mushroom_big3" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -393.069, 2005.15 )
+
+[node name="mushroom_big4" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -1080.02, 923.092 )
+
+[node name="grass14" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -5093.08, -1491.55 )
+
+[node name="grass15" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -1597.15, -2351.4 )
+
+[node name="flower5" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -2762.46, -2622.93 )
+
+[node name="flower6" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -4651.85, -2125.12 )
+
+[node name="mushroom_big6" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -4029.6, -1344.48 )
+
+[node name="mushroom_small13" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -2027.07, -1276.59 )
+
+[node name="grass16" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -2943.48, -1582.06 )
+
+[node name="grass17" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 1287.85, 2932.11 )
+
+[node name="grass18" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 2385.28, 2027.01 )
+
+[node name="mushroom_big7" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 4071.02, 827.755 )
+
+[node name="mushroom_small14" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 2713.38, -326.243 )
+
+[node name="grass19" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 3131.98, 1325.56 )
+
+[node name="grass20" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 835.3, -2781.32 )
+
+[node name="flower7" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 507.202, -1638.63 )
+
+[node name="grass21" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 1774.34, -2294.83 )
+
+[node name="grass22" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 3018.85, -1559.44 )
+
+[node name="grass5" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -1558.11, 2039 )
+
+[node name="grass6" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -1814.68, 2017.62 )
+
+[node name="grass7" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -2078.39, 1981.99 )
+
+[node name="grass8" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -2334.97, 1903.59 )
+
+[node name="grass9" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -2634.31, 1818.06 )
+
+[node name="grass10" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -2933.65, 1746.79 )
+
+[node name="grass11" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -3204.49, 1376.18 )
+
+[node name="grass12" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -3126.09, 1597.12 )
+
+[node name="grass13" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -3361.28, 1091.09 )
+
+[node name="mushroom_big5" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -3361.28, 535.167 )
+
+[node name="mushroom_small5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -3710.52, 321.352 )
+
+[node name="mushroom_small6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -3910.08, 414.005 )
+
+[node name="mushroom_small7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -4066.88, 535.167 )
+
+[node name="mushroom_small8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -4088.26, 727.602 )
+
+[node name="mushroom_small9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -3076.2, 207.317 )
+
+[node name="mushroom_small10" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -2876.63, 214.444 )
+
+[node name="mushroom_small11" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -2726.96, 314.225 )
+
+[node name="mushroom_small12" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -2627.18, 471.023 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 497.445, 585.645 )
+
+[node name="Enemy" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -1003.11, 50.9824 )
+
+[node name="item_spawner2" parent="YSort/Enemy" instance=ExtResource( 14 )]
+position = Vector2( 1003.11, -50.9824 )
+item_type = "Llave acuatica"
+
+[node name="Enemy" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( -3025.45, -641.51 )
+
+[node name="Enemy2" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( -2321.45, -2193.51 )
+
+[node name="Enemy3" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( -2641.45, 974.49 )
+
+[node name="Enemy4" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( 1934.55, 1246.49 )
+
+[node name="Enemy5" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( 2014.55, -273.51 )
+
+[node name="Enemy6" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( 2318.55, -1585.51 )
+
+[node name="Enemy7" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( -401.45, -2401.51 )
+
+[node name="Enemy8" parent="YSort/Enemy/item_spawner2" instance=ExtResource( 13 )]
+position = Vector2( 3182.55, 542.49 )
+
+[editable path="YSort/NPC"]
