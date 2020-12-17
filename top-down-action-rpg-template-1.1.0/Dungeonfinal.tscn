@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://textures/props/puddle_big.png" type="Texture" id=9]
 [ext_resource path="res://scenes/props/House.tscn" type="PackedScene" id=10]
 [ext_resource path="res://textures/props/puddle_small.png" type="Texture" id=11]
+[ext_resource path="res://scenes/characters/Npc.tscn" type="PackedScene" id=12]
 
 [node name="Dungeonfinal" type="Node2D"]
 
@@ -52,6 +53,13 @@ texture = ExtResource( 11 )
 music_track = "res://music/Prophecy-Dungeon-Full-Suite-_Lossless-_-Complete_-Destiny-2-OST-_192-kbps_.ogg"
 
 [node name="YSort" type="YSort" parent="."]
+
+[node name="NPC" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 484.919, 55.9912 )
+character_name = "Warner"
+dialogs = [ "Cuidado adelante
+
+Atraviesa el Dungeon sin morir y seras libre" ]
 
 [node name="house" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 770.217, -5917.64 )
@@ -350,3 +358,5 @@ position = Vector2( -1298.75, -5190.55 )
 
 [node name="Enemy28" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 733.771, -5584.4 )
+
+[editable path="YSort/NPC"]
